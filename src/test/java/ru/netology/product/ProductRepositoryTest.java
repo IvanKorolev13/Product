@@ -36,4 +36,26 @@ class ProductRepositoryTest {
             repo.removeById(4);
         });
     }
+
+    @Test
+    void saveWithNewId() {
+        Product book1 = new Book(1, "Little prince ums", 554, "Saint-Exupery");
+        repo.save(book1);
+
+        Product[] expected = {book1};
+        Product[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void saveWithExistId() {
+        Product book1 = new Book(1, "Little prince ums", 554, "Saint-Exupery");
+        Product book2 = new Book(1, "Master and Margo ums", 495, "Bulgakov");
+        repo.save(book1);
+
+        Assertions.assertThrows(AlreadyExistsException.class, () ->{
+            repo.save(book2);
+        });
+    }
 }

@@ -11,10 +11,10 @@ class ProductManagerTest {
     Product book1 = new Book(1, "Little prince ums", 554, "Saint-Exupery");
     Product book2 = new Book(2, "Master and Margo ums", 495, "Bulgakov");
     Product book3 = new Book(3, "Litle prince ums", 554, "Saint-Exupery");
-    Product smartphone1 = new Smartphone(1, "Sumsung", 25400, "Korea");
-    Product smartphone2 = new Smartphone(2, "Sumsung", 25400, "USA");
-    Product smartphone3 = new Smartphone(1, "Sumsang", 25400, "China");
-    Product smartphone4 = new Smartphone(1, "Sumsang13", 25400, "China");
+    Product smartphone1 = new Smartphone(4, "Sumsung", 25400, "Korea");
+    Product smartphone2 = new Smartphone(5, "Sumsung", 25400, "USA");
+    Product smartphone3 = new Smartphone(6, "Sumsang", 25400, "China");
+    Product smartphone4 = new Smartphone(7, "Sumsang13", 25400, "China");
 
     @Test
     public void addProductBookWhenEmptyBasket() {
