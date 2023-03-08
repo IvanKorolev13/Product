@@ -16,7 +16,21 @@ public class ProductRepository {
         return product;
     }
 
+    public Product findById(int id) {
+        for (Product product : findAll()) {
+            if (product.getId() == id) {
+                return product;
+            }
+        }
+        return null;
+    }
+
     public void removeById(int id) {
+        if (findById(id) == null) {
+            throw new NotFoundException(
+                    "Element with id: " + id + " not found"
+            );
+        }
         Product[] tmp = new Product[product.length - 1];
         int copyToIndex = 0;
         for (int i = 0; i < product.length; i++) {
@@ -25,9 +39,7 @@ public class ProductRepository {
                 copyToIndex++;
             }
         }
-        //if (copyToIndex != product.length) {
         product = tmp;
-        //}
     }
 
     public Product[] saveResult(Product[] result, Product newProduct) {

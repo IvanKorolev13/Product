@@ -25,4 +25,15 @@ class ProductRepositoryTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    void removeByIdNotExist() {
+        Product book1 = new Book(1, "Little prince ums", 554, "Saint-Exupery");
+        Product book2 = new Book(2, "Master and Margo ums", 495, "Bulgakov");
+        productManager.add(book1);
+        productManager.add(book2);
+
+        Assertions.assertThrows(NotFoundException.class, () ->{
+            repo.removeById(4);
+        });
+    }
 }
