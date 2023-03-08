@@ -5,6 +5,10 @@ public class Product {
     protected String name;
     protected int price;
 
+    public boolean matches(String search) {
+        return getName().contains(search);
+    }
+
     public Product(int id, String name, int price) {
         this.id = id;
         this.name = name;
@@ -34,5 +38,4 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
-
 }

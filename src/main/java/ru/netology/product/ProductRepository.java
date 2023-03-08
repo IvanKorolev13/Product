@@ -25,9 +25,7 @@ public class ProductRepository {
                 copyToIndex++;
             }
         }
-        //if (copyToIndex != product.length) {
         product = tmp;
-        //}
     }
 
     public Product[] saveResult(Product[] result, Product newProduct) {

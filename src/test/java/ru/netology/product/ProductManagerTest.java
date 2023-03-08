@@ -83,15 +83,11 @@ class ProductManagerTest {
         productManager.add(smartphone3);
         productManager.add(smartphone4);
 
-        Product[] expected = {book2, smartphone3, smartphone4};
+        Product[] expected = {book1, book2, book3, smartphone1, smartphone3, smartphone4};
         Product[] actual = productManager.searchBy("a");
 
         Assertions.assertArrayEquals(expected, actual);
     }
-
-    //@Test
-    //public void searchByTwoCharacter() {
-    //}
 
     @Test
     public void searchBySingleWord() {
@@ -108,10 +104,6 @@ class ProductManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
-
-    //@Test
-    //public void searchByTwoWord() {
-    //}
 
     @Test
     public void searchByNumbers() {
